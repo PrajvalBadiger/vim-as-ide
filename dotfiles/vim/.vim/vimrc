@@ -1,7 +1,3 @@
-
-
-
-
 " Install plug.vim automatically
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -11,5 +7,49 @@ endif
 
 " Plugins
 call plug#begin('~/.vim/plugged')
+	Plug 'morhetz/gruvbox' 	" gruvbox colorscheme
 
 call plug#end()
+
+
+" Basic config
+set nu
+syntax on
+set background=dark
+colorscheme gruvbox
+set smartindent
+set nowrap
+set showcmd
+set splitright splitbelow
+set tabstop=4 shiftwidth=4
+set incsearch
+set ignorecase
+set cursorline
+
+" show trailing white spaces and tabs
+set listchars=tab:_\ ,trail:_
+set list
+
+" start from where you left
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+" quick access vimrc
+let $RC="$HOME/.vim/vimrc"
+
+
+" Remaps
+
+nnoremap ; :
+nnoremap : ;
+cnoremap ; :
+cnoremap : ;
+
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+
+nnoremap j gj
+nnoremap k gk
+nnoremap <S-k> 5k
+nnoremap <S-j> 5j
