@@ -5,9 +5,9 @@
 3. intellisense for c/c++ and python
 4. system wide clipboard
 5. tabs and splits
-6. integrated terminal
+6. integrated terminal - floaterm
 7. build and run tasks
-8. git integration
+8. git integration - tpope/vim-fugitive
 9. workspace file search - ctrlP, fuzzyFind
 10. grep
 11. vim sessions

@@ -1,3 +1,4 @@
+
 " Install plug.vim automatically
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
 if empty(glob(data_dir . '/autoload/plug.vim'))
@@ -5,18 +6,10 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Plugins
-call plug#begin('~/.vim/plugged')
-	Plug 'morhetz/gruvbox' 	" gruvbox colorscheme
-
-call plug#end()
-
-
 " Basic config
 set nu
 syntax on
 set background=dark
-colorscheme gruvbox
 set smartindent
 set nowrap
 set showcmd
@@ -25,7 +18,12 @@ set tabstop=4 shiftwidth=4
 set incsearch
 set ignorecase
 set cursorline
+set wildmode=longest:full,full
 
+set scrolloff=8
+set sidescrolloff=8
+
+set clipboard=unnamedplus
 " show trailing white spaces and tabs
 set listchars=tab:_\ ,trail:_
 set list
@@ -44,12 +42,25 @@ nnoremap : ;
 cnoremap ; :
 cnoremap : ;
 
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-h> <C-w>h
+nmap <silent> <C-j> <C-w>j
+nmap <silent> <C-k> <C-w>k
+nmap <silent> <C-l> <C-w>l
+nmap <silent> <C-h> <C-w>h
 
 nnoremap j gj
 nnoremap k gk
 nnoremap <S-k> 5k
 nnoremap <S-j> 5j
+
+vnoremap < <gv
+vnoremap > >gv
+map gf :edit <cfile><cr>
+
+" Plugins
+call plug#begin('~/.vim/plugged')
+	source ~/.vim/plugin/gruvbox/gruvbox.vim
+	source ~/.vim/plugin/floaterm/floaterm.vim
+
+call plug#end()
+doautocmd User Plugloaded
+
