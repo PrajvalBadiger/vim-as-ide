@@ -6,6 +6,9 @@ if empty(glob(data_dir . '/autoload/plug.vim'))
         autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
+"Leader Key
+let mapleader="\<Space>"
+
 " Basic config
 set nu
 syntax on
@@ -47,6 +50,7 @@ nmap <silent> <C-k> <C-w>k
 nmap <silent> <C-l> <C-w>l
 nmap <silent> <C-h> <C-w>h
 
+
 nnoremap j gj
 nnoremap k gk
 nnoremap <S-k> 5k
@@ -54,12 +58,23 @@ nnoremap <S-j> 5j
 
 vnoremap < <gv
 vnoremap > >gv
-map gf :edit <cfile><cr>
+
+" Terminal remaps
+nnoremap <silent> <Leader>t :term ++rows=9 ++close<cr>
+tnoremap ; :
+tnoremap : ;
+" navigation between terminals and other panes
+tmap <silent> <C-j> <C-w>j
+tmap <silent> <C-k> <C-w>k
+tmap <silent> <C-l> <C-w>l
+tmap <silent> <C-h> <C-w>h
+" hit esc for Normal mode in terminal
+tmap <Esc> <C-\><C-n>
 
 " Plugins
 call plug#begin('~/.vim/plugged')
 	source ~/.vim/plugin/gruvbox/gruvbox.vim
-	source ~/.vim/plugin/floaterm/floaterm.vim
+	source ~/.vim/plugin/nerdtree/nerdtree.vim
 
 call plug#end()
 doautocmd User Plugloaded
