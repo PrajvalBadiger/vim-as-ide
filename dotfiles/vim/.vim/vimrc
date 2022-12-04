@@ -80,6 +80,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.vim/plugin/gruvbox/gruvbox.vim
 	source ~/.vim/plugin/nerdtree/nerdtree.vim
 	source ~/.vim/plugin/fzf/fzf.vim
+	source ~/.vim/plugin/signify/signify.vim
 
 call plug#end()
 doautocmd User Plugloaded
