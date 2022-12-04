@@ -71,11 +71,15 @@ tmap <silent> <C-h> <C-w>h
 " hit esc for Normal mode in terminal
 tmap <Esc> <C-\><C-n>
 
+" remove | from vertsplit incicator
+set fillchars+=vert:\ 
+
 " Plugins
 call plug#begin('~/.vim/plugged')
+
 	source ~/.vim/plugin/gruvbox/gruvbox.vim
 	source ~/.vim/plugin/nerdtree/nerdtree.vim
+	source ~/.vim/plugin/fzf/fzf.vim
 
 call plug#end()
 doautocmd User Plugloaded
-
