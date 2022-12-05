@@ -37,6 +37,8 @@ au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g
 " quick access vimrc
 let $RC="$HOME/.vim/vimrc"
 
+set wildmenu
+set wildmode=longest,list,full
 
 " Remaps
 
@@ -51,6 +53,8 @@ nmap <silent> <C-l> <C-w>l
 nmap <silent> <C-h> <C-w>h
 
 
+inoremap jj <ESC>
+inoremap JJ <ESC>
 nnoremap j gj
 nnoremap k gk
 nnoremap <S-k> 5k
@@ -74,13 +78,18 @@ tmap <Esc> <C-\><C-n>
 " remove | from vertsplit incicator
 set fillchars+=vert:\ 
 
+" transparent background
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+
 " Plugins
 call plug#begin('~/.vim/plugged')
 
-	source ~/.vim/plugin/gruvbox/gruvbox.vim
-	source ~/.vim/plugin/nerdtree/nerdtree.vim
+	Plug 'morhetz/gruvbox'
 	source ~/.vim/plugin/fzf/fzf.vim
 	source ~/.vim/plugin/signify/signify.vim
+	source ~/.vim/plugin/coc/coc.vim
+	source ~/.vim/plugin/fugitive/fugitive.vim
 
 call plug#end()
-doautocmd User Plugloaded
+
+colorscheme gruvbox
