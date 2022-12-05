@@ -92,6 +92,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.vim/plugin/vim-commentary/vim-commentary.vim
 	source ~/.vim/plugin/vim-tmux-navigator/vim-tmux-navigator.vim
 	source ~/.vim/plugin/vim-sneak/vim-sneak.vim
+	source  ~/.vim/plugin/delimitmate/delimitmate.vim
 
 call plug#end()
 
