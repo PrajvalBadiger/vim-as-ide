@@ -89,6 +89,7 @@ call plug#begin('~/.vim/plugged')
 	source ~/.vim/plugin/signify/signify.vim
 	source ~/.vim/plugin/coc/coc.vim
 	source ~/.vim/plugin/fugitive/fugitive.vim
+	source ~/.vim/plugin/vim-commentary/vim-commentary.vim
 
 call plug#end()
 
