@@ -90,6 +90,8 @@ call plug#begin('~/.vim/plugged')
 	source ~/.vim/plugin/coc/coc.vim
 	source ~/.vim/plugin/fugitive/fugitive.vim
 	source ~/.vim/plugin/vim-commentary/vim-commentary.vim
+	source ~/.vim/plugin/vim-tmux-navigator/vim-tmux-navigator.vim
+	source ~/.vim/plugin/vim-sneak/vim-sneak.vim
 
 call plug#end()
 
