@@ -1,4 +1,3 @@
-Plug 'christoomey/vim-tmux-navigator' 	" vim tmux navigator
 
 " tmux navigator
 	let g:tmux_navigator_no_mappings = 1
